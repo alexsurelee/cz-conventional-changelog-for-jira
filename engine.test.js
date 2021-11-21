@@ -611,6 +611,11 @@ describe('questions', function() {
       'What is the scope of this change (e.g. component or file name): (select from the list)'
     );
   });
+  it('optional scope question', function() {
+    expect(questionPrompt('hasScope', [], {scopeOptional: true, scopes: ['scope1', 'scope2']})).to.be.eq(
+      'Does this commit have a scope? (e.g. component or file name)'
+    )
+  })
   it('scope without list', function() {
     expect(questionPrompt('scope')).to.be.eq(
       'What is the scope of this change (e.g. component or file name): (press enter to skip)'

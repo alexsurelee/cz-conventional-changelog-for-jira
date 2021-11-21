@@ -121,9 +121,23 @@ module.exports = function(options) {
           }
         },
         {
+          type: 'confirm',
+          name: 'hasScope',
+          when: function() {
+            return options.scopeOptional && hasScopes && !options.skipScope
+          },
+          message:
+            'Does this commit have a scope? (e.g. component or file name)',
+        },
+        {
           type: hasScopes ? 'list' : 'input',
           name: 'scope',
-          when: !options.skipScope,
+          when: function(answers) {
+            return (
+              !options.skipScope &&
+              (answers.hasScope || !options.scopeOptional)
+            );
+          },
           choices: hasScopes ? options.scopes : undefined,
           message:
             'What is the scope of this change (e.g. component or file name): ' +

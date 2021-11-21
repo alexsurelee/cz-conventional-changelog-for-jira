@@ -117,6 +117,7 @@ List of all supported configurable options when using the _configurable_ approac
 | jiraPrefix     | 'DAZ'                    | The default JIRA ticket prefix that will be displayed.                                                                                                                |
 | types          | ./types.js               | A list (JS Object) of supported commit types.                                                                                                                         |
 | scopes         | undefined                | A list (JS Array) of scopes that will be available for selection. Note that adding this will change the scope field from Inquirer 'input' to 'list'.                  |
+| scopeOptional  | false                    | If set to true, and a list of scopes is provided, an additional question to confirm the presence of scope will be added |
 | jiraOptional   | false                    | If this is set to true, you can leave the JIRA field blank.                                                                                                           |
 | jiraLocation   | "pre-description"        | Changes position of JIRA ID. Options: `pre-type`, `pre-description`, `post-description`                                                                               |
 | jiraPrepend    | ""                       | Prepends JIRA ID with an optional decorator. e.g.: `[DAZ-1234`                                                                                                        |
